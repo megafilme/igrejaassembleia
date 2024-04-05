@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Autódromo – Cajuru</title>
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Mukta', sans-serif;
+    }
+
+    #background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #background video {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    #app {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .navigation {
+      list-style-type: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .navigation__link {
+      text-decoration: none;
+      color: black;
+      margin-right: 15px;
+    }
+
+    .info-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .info-container img {
+      max-width: 25%;
+      height: auto;
+      flex-shrink: 0;
+      margin-right: 20px;
+      margin-bottom: 20px; /* Adicionando margem inferior */
+    }
+
+    .front-image {
+      position: relative; /* Alterado para relativo */
+      top: 20px; /* Ajuste a posição conforme necessário */
+      z-index: -1;
+    }
+
+    .info-container p {
+      margin: 0;
+      max-width: 75%;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div id="background">
+    <video loop autoplay muted>
+      <source src="4K UHD Flying Above Clouds Live Wallpaper.mp4" type="">
+      Seu navegador não suporta a reprodução de vídeo.
+    </video>
+  </div>
+
+  <div id="app">
+    <img src="foto do chapeu da igreja.png" alt="" style="width: 100px; height: auto;">
+    <ul class="navigation">
+      <li><a href="https://assembleiadedeus.org.br/biblia-on-line/" class="navigation__link">Bíblia</a></li>
+      <li><a href="https://www.letras.mus.br/harpa-crista/" class="navigation__link">Hino da Harpa</a></li>
+      <li><a href="https://www.google.com.br/maps/place/R.+Leonardo+Novicki,+5+-+Cajuru,+Curitiba+-+PR,+82930-548/@-25.45321,-49.2029925,17z/data=!3m1!4b1!4m10!1m2!2m1!1srua+leonardo+novicki+5+82.930-548+aut%C3%B3dromo+!3m6!1s0x94dceff72d6f9a7f:0xf46df1c3db683bfc!8m2!3d-25.4532101!4d-49.1981216!15sCixydWEgbGVvbmFyZG8gbm92aWNraSA1IDgyLjkzMC01NDggYXV0w7Nkcm9tb5IBEWNvbXBvdW5kX2J1aWxkaW5n4AEA!16s%2Fg%2F11cr_hnfq6?entry=ttu" class="navigation__link">Venha Participar conosco</a></li>
+      <li><a href="autodromo.html" class="navigation__link">Jovens</a></li>
+      <li><a href="#" class="navigation__link">Escola Bíblica EBD</a></li>
+    </ul>
+
+    <div class="navigation__social">
+      <!-- SVGs aqui -->
+    </div>
+
+    <div class="info-container">
+      <img src="autodromo-foto-1-930x620.jpg">
+      <img src="Screenshot_20240401_212803_Instagram.jpg" class="front-image">
+      <p>
+        Sei que às vezes a vida nos leva por caminhos diferentes e podemos nos afastar das coisas que são importantes para nós. Gostaria de te convidar para se juntar a nós no sábado e domingo de culto em nossa igreja. Seria maravilhoso ter você presente conosco, compartilhando momentos de adoração e comunhão. Sinta-se à vontade para entrar em contato conosco para mais detalhes ou para qualquer dúvida que possa ter. Espero te ver em breve! Irma Luciana
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <p> Endereço: Rua Leonardo Novicki, 5 CEP 82.930-548 Autódromo – Cajuru<p></p>
+    <p>  Telefone:   (41) 3259-4300</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Lista de URLs das imagens
+    const imageUrls = [ 
+      "Screenshot_20240401_212803_Instagram.jpg",
+      "foto psico...jpg", // Adicione mais URLs conforme necessário
+    ];
+
+    const frontImage = document.querySelector(".front-image");
+    let currentIndex = 0;
+
+    // Função para trocar a imagem a cada 5 segundos
+    function changeImage() {
+      frontImage.src = imageUrls[currentIndex];
+      currentIndex = (currentIndex + 1) % imageUrls.length; // Loop pelas imagens
+    }
+
+    // Iniciar o intervalo para trocar a imagem a cada 5 segundos
+    setInterval(changeImage, 5000);
+  </script>
+</body>
+</html>
